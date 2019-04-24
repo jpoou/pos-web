@@ -1,0 +1,31 @@
+<h1 class="animated fadeIn fast"> Products </h1>
+<hr>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </div>
+</div>
+<table class="table table-bordered">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Code</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Created</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of products;">
+    <th scope="row">{{ item.id }}</th>
+    <td>{{ item.name }}</td>
+    <td>{{ item.code }}</td>
+    <td class="text-center">{{ item.quantity }}</td>
+    <td class="text-center">{{ item.createdAt | date:'d/M/y HH:MM:SS' }}</td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
