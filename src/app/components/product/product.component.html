@@ -1,0 +1,24 @@
+<h1 *ngIf="pageType ==='edit'">{{product.name}}</h1>
+<h1 *ngIf="pageType ==='new'">New Product</h1>
+<hr>
+<div class="container">
+  <form name="productForm" [formGroup]="productForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" formControlName="name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" class="form-control"  id="code" formControlName="code" name="name">
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input type="number" class="form-control" id="quantity" formControlName="quantity"  name="quantity">
+    </div>
+    <button *ngIf="pageType ==='new'" (click)="addProduct()" class="btn btn-primary mr-1">Add</button>
+    <button *ngIf="pageType ==='edit'" (click)="saveProduct()"  class="btn btn-primary mr-1">Save</button>
+    <button type="button" class="btn btn-info" [routerLink]="[ '/products' ]">Cancel</button>
+  </form>
+</div>
+
+

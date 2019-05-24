@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 /* Routes */
-import {APP_ROUTING} from './app.routes';
+import { APP_ROUTING } from './app.routes';
 
 /* Services */
 
@@ -15,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -23,11 +27,15 @@ import { ProductsComponent } from './components/products/products.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     APP_ROUTING
   ],
   providers: [
